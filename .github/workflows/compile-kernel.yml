@@ -16,7 +16,7 @@ on:
       kernel_ver:
         description: 'Kernel version: 5.4.160'
         required: false
-        default: '5.4.160_5.9.0_5.10.80'
+        default: '5.4.160_5.9.0_5.10.80_5.15.0'
   #schedule:
     #- cron: '0 17 * * 0'
 
@@ -61,7 +61,7 @@ jobs:
         if  [[ -n "${{ github.event.inputs.kernel_ver }}" ]]; then
             KERNEL_VER="${{ github.event.inputs.kernel_ver }}"
         else
-            KERNEL_VER="5.4.160_5.9.0_5.10.80"
+            KERNEL_VER="5.4.160_5.9.0_5.10.80_5.15.0"
         fi
         echo "KERNEL_VER=${KERNEL_VER}" >> $GITHUB_ENV
     - name: Compile the Kernel [ -k ${{ env.KERNEL_VER }} -r ${{ env.KERNEL_REPO }} ]
