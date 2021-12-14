@@ -18,8 +18,9 @@ tmp_armbian=${make_path}/tmp_armbian
 tmp_build=${make_path}/tmp_build
 tmp_aml_image=${make_path}/tmp_aml_image
 
-kernel_library="https://github.com/ophub/flippy-kernel/tree/main/library"
+kernel_library="https://github.com/ophub/kernel/tree/main/pub"
 #kernel_library="https://github.com/ophub/flippy-kernel/trunk/library"
+version_branch="stable"
 
 build_armbian=("s922x" "s922x-n2" "s905x3" "s905x2" "s912" "s905d" "s905x" "s905w")
 build_kernel=("default")
