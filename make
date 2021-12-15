@@ -18,7 +18,7 @@ tmp_armbian=${make_path}/tmp_armbian
 tmp_build=${make_path}/tmp_build
 tmp_aml_image=${make_path}/tmp_aml_image
 
-kernel_library="https://github.com/ophub/kernel/tree/main/pub"
+kernel_library="https://github.com/ophub/kernel/tree/main"
 #kernel_library="https://github.com/ophub/flippy-kernel/trunk/library"
 version_branch="stable"
 
@@ -48,7 +48,7 @@ if [ -n "${2}" ]; then
 
     # Convert kernel library address to svn format
     if [[ ${kernel_library} == http* && $(echo ${kernel_library} | grep "tree/main") != "" ]]; then
-        kernel_library=${kernel_library//tree\/main/pub}
+        kernel_library=${kernel_library//tree\/main}
     fi
 
     # Check the new version on the kernel library
