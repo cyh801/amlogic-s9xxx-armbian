@@ -48,7 +48,7 @@ if [ -n "${2}" ]; then
 
     # Convert kernel library address to svn format
     if [[ ${kernel_library} == http* && $(echo ${kernel_library} | grep "tree/main") != "" ]]; then
-        kernel_library=${kernel_library//tree\/main/trunk}
+        kernel_library=${kernel_library//tree\/main/pub}
     fi
 
     # Check the new version on the kernel library
@@ -59,7 +59,7 @@ if [ -n "${2}" ]; then
 
         # Convert kernel library address to API format
         SERVER_KERNEL_URL=${kernel_library#*com\/}
-        SERVER_KERNEL_URL=${SERVER_KERNEL_URL//trunk/contents}
+        SERVER_KERNEL_URL=${SERVER_KERNEL_URL//pub/contents}
         SERVER_KERNEL_URL="https://api.github.com/repos/${SERVER_KERNEL_URL}"
 
         # Query the latest kernel in a loop
